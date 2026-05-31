@@ -31,7 +31,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.6) contrast(1.03) saturate(0.92);
+  filter: brightness(1) contrast(1.02) saturate(0.92);
 }
 
 .hero-video-desktop {
@@ -290,6 +290,7 @@
   }
   .hero-video-mobile {
     display: block;
+    filter: brightness(0.85) contrast(1.03) saturate(0.9);
   }
   .hero-content h1 {
     font-size: 42px;

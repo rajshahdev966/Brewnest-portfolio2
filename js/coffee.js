@@ -15,7 +15,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 2. Video Ping-Pong Loop (Forward-Reverse-Forward)
+  const coffeeVideo = document.querySelector('.coffee-hero-video');
+  if (coffeeVideo) {
+    let isReversing = false;
+    let lastTime = 0;
 
+    coffeeVideo.addEventListener('ended', () => {
+      isReversing = true;
+      lastTime = performance.now();
+      requestAnimationFrame(reversePlay);
+    });
+
+    function reversePlay(now) {
+      if (!isReversing) return;
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+      
+      const nextTime = coffeeVideo.currentTime - dt;
+      if (nextTime <= 0.1) {
+        coffeeVideo.currentTime = 0;
+        isReversing = false;
+        coffeeVideo.play();
+      } else {
+        coffeeVideo.currentTime = nextTime;
+        requestAnimationFrame(reversePlay);
+      }
+    }
+  }
 
   // 3. Waitlist Email Submission
   const waitlistForm = document.getElementById('coffee-waitlist-form');
