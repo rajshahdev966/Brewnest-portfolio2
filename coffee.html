@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freshly Roasted Specialty Coffee Beans — BrewNest Roastery Bengaluru</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Shop artisan whole bean coffee roasted in Bengaluru by BrewNest Café. Single-origin micro-lots, custom blends, and roasting profiles. Buy on Amazon.">
+  <meta name="keywords" content="artisan coffee beans Bengaluru, buy coffee beans online, single origin coffee India, espresso roasters Bengaluru">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/coffee.css">
+  <!-- Google Sheets Web App Integration -->
+  <script src="./brewnest-sheets.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-container" id="main-navbar">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="nav-logo">
+        BrewNest<span class="logo-dot"></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="index.html" id="link-home">Home</a></li>
+          <li class="nav-item"><a href="index.html#menu" id="link-menu">Menu</a></li>
+          <li class="nav-item"><a href="index.html#events" id="link-events">Events</a></li>
+          <li class="nav-item active"><a href="coffee.html" id="link-coffee">Coffee Products</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="workspace.html" class="btn btn-secondary btn-desktop" id="nav-cta-btn">Reserve Table</a>
+        <button class="hamburger" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-nav-drawer">
+    <ul class="mobile-links">
+      <li class="mobile-item"><a href="index.html">Home</a></li>
+      <li class="mobile-item"><a href="index.html#menu">Menu</a></li>
+      <li class="mobile-item"><a href="index.html#events">Events</a></li>
+      <li class="mobile-item active"><a href="coffee.html">Coffee Products</a></li>
+    </ul>
+    <a href="workspace.html" class="btn btn-primary" style="margin-top: auto; text-align: center;">Reserve Table</a>
+  </aside>
+
+  <main>
+    <!-- Coffee Hero Section -->
+    <section class="coffee-hero" id="roastery-hero">
+      <div class="coffee-hero-bg"></div>
+      <div class="coffee-hero-video-container">
+        <video autoplay muted loop playsinline class="coffee-hero-video">
+          <source src="./coffee-video-desktop.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="coffee-hero-overlay"></div>
+      <div class="container coffee-hero-content fade-reveal active">
+        <span class="coffee-hero-label">Artisan Roastery</span>
+        <h1 class="display-lg">Freshly Roasted In-House Coffee Beans</h1>
+        <p class="body-lg">Sourced from the world's most prestigious high-altitude micro-lots and roasted daily in small batches for unparalleled complexity and clarity.</p>
+        <div class="coffee-hero-ctas">
+          <a href="#roasted-beans" class="btn btn-primary">Shop Collection</a>
+          <a href="#why-roastery" class="btn btn-secondary">Learn Our Process &rarr;</a>
+        </div>
+      </div>
+      <div class="scroll-down-indicator" id="scroll-to-products">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </section>
+
+    <!-- Coffee Roasted Beans Collection Section -->
+    <section class="products-section section-padding" id="roasted-beans">
+      <div class="container">
+        
+        <!-- Header area with carousels navigation arrows -->
+        <div class="products-carousel-header fade-reveal">
+          <div class="products-carousel-header-text">
+            <span class="label-lg">Our Roasted Beans</span>
+            <h2 class="display-md" style="margin-top: 8px;">Exceptional beans for the discerning brewer.</h2>
+            <p class="body-md">From bright, floral African harvests to chocolatey, full-bodied South American single-origins.</p>
+          </div>
+
+        </div>
+
+        <!-- Product Carousel container -->
+        <div class="products-carousel-wrapper fade-reveal">
+          <div class="products-carousel-track" id="products-track">
+            
+            <!-- Card 1 -->
+            <article class="product-card" id="coffee-item-1">
+              <span class="product-roast-badge badge-light">Light Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_ethiopia.png" alt="Premium whole bean coffee packaging of Ethiopia Yirgacheffe">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Ethiopia Yirgacheffe</h3>
+                <span class="product-price">₹620</span>
+              </div>
+              <p class="product-desc">A delicate and complex profile with notes of bergamot, jasmine, and ripe peach. Harvested at 2,100 meters.</p>
+              
+              <div class="product-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Process</span>
+                  <span class="spec-val">Washed</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Brew Method</span>
+                  <span class="spec-val">V60 / Chemex</span>
+                </div>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+ 
+            <!-- Card 2 -->
+            <article class="product-card" id="coffee-item-2">
+              <span class="product-roast-badge badge-medium">Medium Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_midnight.png" alt="Premium whole bean coffee packaging of Midnight Soul Blend">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Midnight Soul Blend</h3>
+                <span class="product-price">₹580</span>
+              </div>
+              <p class="product-desc">Our signature house-blend designed for a rich crema and lingering finish of dark cocoa and toasted hazelnut.</p>
+              
+              <div class="product-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Process</span>
+                  <span class="spec-val">Natural Blend</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Brew Method</span>
+                  <span class="spec-val">Espresso / Moka Pot</span>
+                </div>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+ 
+            <!-- Card 3 -->
+            <article class="product-card" id="coffee-item-3">
+              <span class="product-roast-badge badge-light-medium">Light-Medium Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_colombia.png" alt="Premium whole bean coffee packaging of Colombia Huila">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Colombia Huila</h3>
+                <span class="product-price">₹650</span>
+              </div>
+              <p class="product-desc">Sweet and balanced with a medium body. Flavor notes of red apple, caramel, and a hint of vanilla bean.</p>
+              
+              <div class="product-specs">
+                <div class="spec-item">
+                  <span class="spec-label">Process</span>
+                  <span class="spec-val">Honey Process</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-label">Brew Method</span>
+                  <span class="spec-val">Aeropress / Drip</span>
+                </div>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="product-card" id="coffee-item-4">
+              <span class="product-roast-badge badge-light">Light Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_kenya.png" alt="Premium whole bean coffee packaging of Kenya AA Sunrise" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Kenya AA Sunrise</h3>
+                <span class="product-price">₹690</span>
+              </div>
+              <p class="product-desc">A vibrant and juicy coffee with bright acidity, layered notes of blackcurrant, citrus zest, and honey sweetness. Grown in the rich volcanic soils of Kenya's highlands.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Washed</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> V60 / Pour Over</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="product-card" id="coffee-item-5">
+              <span class="product-roast-badge badge-dark">Dark Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_sumatra.png" alt="Premium whole bean coffee packaging of Sumatra Mandheling" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Sumatra Mandheling</h3>
+                <span class="product-price">₹720</span>
+              </div>
+              <p class="product-desc">Full-bodied and earthy with notes of dark chocolate, cedar, and warm spice. An intense and comforting cup crafted for those who enjoy bold coffee experiences.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Wet Hulled</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> French Press / Espresso</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 6 -->
+            <article class="product-card" id="coffee-item-6">
+              <span class="product-roast-badge badge-medium">Medium Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_guatemala.png" alt="Premium whole bean coffee packaging of Guatemala Antigua" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Guatemala Antigua</h3>
+                <span class="product-price">₹640</span>
+              </div>
+              <p class="product-desc">Rich and balanced with tasting notes of cocoa, brown sugar, and roasted almonds. A smooth everyday coffee with exceptional sweetness.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Washed</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> Drip / AeroPress</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 7 -->
+            <article class="product-card" id="coffee-item-7">
+              <span class="product-roast-badge badge-light">Light Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_costarica.png" alt="Premium whole bean coffee packaging of Costa Rica Tarrazú" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Costa Rica Tarrazú</h3>
+                <span class="product-price">₹680</span>
+              </div>
+              <p class="product-desc">Clean and elegant with flavors of orange blossom, caramel, and stone fruits. A bright specialty coffee showcasing the region's celebrated terroir.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Honey Process</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> V60 / Chemex</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 8 -->
+            <article class="product-card" id="coffee-item-8">
+              <span class="product-roast-badge badge-medium-dark">Medium-Dark</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_monsoon.png" alt="Premium whole bean coffee packaging of Monsoon Malabar Reserve" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Monsoon Malabar Reserve</h3>
+                <span class="product-price">₹590</span>
+              </div>
+              <p class="product-desc">A uniquely Indian coffee with low acidity and notes of roasted nuts, dark cocoa, and spice. Smooth, earthy, and exceptionally creamy.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Monsooned</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> Espresso / French Press</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 9 -->
+            <article class="product-card" id="coffee-item-9">
+              <span class="product-roast-badge badge-medium">Medium Roast</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_brazil.png" alt="Premium whole bean coffee packaging of Brazil Cerrado Estate" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Brazil Cerrado Estate</h3>
+                <span class="product-price">₹610</span>
+              </div>
+              <p class="product-desc">Naturally sweet with flavors of milk chocolate, roasted hazelnut, and caramel. An approachable crowd favorite with a silky finish.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Natural</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> Moka Pot / Espresso</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 10 -->
+            <article class="product-card" id="coffee-item-10">
+              <span class="product-roast-badge badge-light-medium">Light-Medium</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_rwanda.png" alt="Premium whole bean coffee packaging of Rwanda Red Bourbon" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Rwanda Red Bourbon</h3>
+                <span class="product-price">₹670</span>
+              </div>
+              <p class="product-desc">Delicate floral aromas balanced with red berries, honey, and tea-like elegance. A refined coffee with remarkable clarity.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Washed</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> Pour Over / AeroPress</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 11 -->
+            <article class="product-card" id="coffee-item-11">
+              <span class="product-roast-badge badge-dark">Dark Roast</span>
+              <span class="special-tag">Best for Espresso</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_espresso.png" alt="Premium whole bean coffee packaging of Espresso Reserve Noir" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Espresso Reserve Noir</h3>
+                <span class="product-price">₹760</span>
+              </div>
+              <p class="product-desc">Crafted specifically for espresso lovers, delivering rich crema and bold flavors of dark chocolate, molasses, and toasted walnut.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Natural Blend</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> Espresso Machine</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+            <!-- Card 12 -->
+            <article class="product-card" id="coffee-item-12">
+              <span class="product-roast-badge badge-medium">Medium Roast</span>
+              <span class="special-tag">India Origin</span>
+              <div class="product-img-wrap">
+                <img src="assets/coffee_bag_himalayan.png" alt="Premium whole bean coffee packaging of Himalayan Estate Signature" loading="lazy">
+              </div>
+              <div class="product-title-wrap">
+                <h3 class="product-title">Himalayan Estate Signature</h3>
+                <span class="product-price">₹630</span>
+              </div>
+              <p class="product-desc">A premium Indian estate coffee with notes of caramel, cocoa nibs, and dried fruit. Smooth, balanced, and perfect for everyday brewing.</p>
+              
+              <div class="product-tags-row">
+                <span class="product-spec-tag"><span class="tag-prefix">Process:</span> Washed</span>
+                <span class="product-spec-tag"><span class="tag-prefix">Brew:</span> Drip / French Press</span>
+              </div>
+              <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%; border-color: rgba(200, 155, 99, 0.4); color: var(--color-tertiary);">Buy on Amazon</a>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Why BrewNest Roastery section -->
+    <section class="why-roastery-section section-padding" id="why-roastery">
+      <div class="container why-roastery-grid">
+        <div class="why-roastery-left fade-reveal">
+          <img src="assets/menu_v60.png" alt="Barista pouring hot water over a coffee dripper setup">
+          <div class="roastery-quote-overlay">
+            <p class="roastery-quote-text">“Quality is in the details, every single origin bean is tracked, roasted, and served with utmost mathematical precision.”</p>
+          </div>
+        </div>
+        
+        <div class="why-roastery-right fade-reveal">
+          <div>
+            <span class="label-lg">Why Our Beans?</span>
+            <h2 class="display-md" style="margin-top: 8px;">Uncompromising Standards from Soil to Cup</h2>
+          </div>
+          
+          <div class="roastery-features-list">
+            <!-- Feature 1 -->
+            <div class="roastery-feature-item">
+              <div class="roastery-feature-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="roastery-feature-info">
+                <h3>Direct Trade Ethics</h3>
+                <p>We work directly with local farmers in Chikmagalur and international estates, paying 50% above Fair Trade standards to ensure sustainable agrarian practices.</p>
+              </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="roastery-feature-item">
+              <div class="roastery-feature-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2 2M12 12m-1 0a1 1 0 1 0 2 0 1 1 0 1 0-2 0"/></svg>
+              </div>
+              <div class="roastery-feature-info">
+                <h3>Precision Hot Air Roasting</h3>
+                <p>Using Loring smart zero-emission roasters, we maintain heat accuracy within 0.1°C to fully unlock specific origin volatiles and caramelize sweet compounds.</p>
+              </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="roastery-feature-item">
+              <div class="roastery-feature-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+              </div>
+              <div class="roastery-feature-info">
+                <h3>Freshness Guaranteed</h3>
+                <p>Your coffee is shipped within 48 hours of roasting. Degassing of carbon compounds happens in transit inside valved bags for optimal taste profile on arrival.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscription Membership Form waitlist Section -->
+    <section class="membership-section section-padding">
+      <div class="container">
+        <div class="membership-card fade-reveal">
+          <div class="membership-card-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h2>Join BrewNest Coffee Membership</h2>
+          <p>Never run out of your favorite beans. Get exclusive access to micro-lot releases, member-only pricing, and free shipping on all orders. Launching soon.</p>
+          
+          <form class="membership-form" id="coffee-waitlist-form">
+            <input type="email" class="form-input" placeholder="Enter your email address" required aria-label="Email Address for Waitlist">
+            <button type="submit" class="btn btn-tertiary" id="coffee-waitlist-submit-btn">Request Early Access</button>
+          </form>
+          <div class="membership-note" id="waitlist-response-message">No spam. Only the finest coffee updates.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="container footer-grid">
+      <!-- Logo and Description -->
+      <div class="footer-logo-col">
+        <a href="index.html" class="logo">
+          BrewNest<span class="logo-dot"></span>
+        </a>
+        <p class="footer-tagline">Specialty Coffee Café & Workspace in Bengaluru. Designed for creators, developers, and writers.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      
+      <!-- Nav Links -->
+      <div>
+        <h3 class="footer-title">Experience</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="index.html#menu">Our Menu</a></li>
+          <li class="footer-link"><a href="workspace.html">Workspace Booking</a></li>
+          <li class="footer-link"><a href="coffee.html">Coffee Products</a></li>
+          <li class="footer-link"><a href="index.html#events">Community Events</a></li>
+        </ul>
+      </div>
+      
+      <!-- Company Links -->
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="#">About Us</a></li>
+          <li class="footer-link"><a href="#">Careers</a></li>
+          <li class="footer-link"><a href="#">Press Kit</a></li>
+          <li class="footer-link"><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info & Embed Map -->
+      <div class="footer-contact-col">
+        <h3 class="footer-title">Visit Us</h3>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>102, 80 Feet Road, Indiranagar, Bengaluru, KA 560038</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Open Daily: 8:00 AM - 11:00 PM</span>
+        </div>
+        
+        <div class="footer-map-container">
+          <iframe title="BrewNest Cafe Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8813861021995!2d77.64678359999999!3d12.979437599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16ae6b7be9cf%3A0x7ba63741afc606f5!2s102%2C%2080%20Feet%20Rd%2C%20Michael%20Palaya%2C%20New%20Tippasandra%2C%20Bengaluru%2C%20Karnataka%20560075!5e0!3m2!1sen!2sin!4v1780201709956!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p class="footer-copy">&copy; 2026 BrewNest Café. Artisan Roast & Refined Workspace. All Rights Reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#" class="footer-legal-link">Terms of Service</a>
+        <a href="#" class="footer-legal-link">Sitemap</a>
+        <a href="#" class="footer-legal-link">Local Schema</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/coffee.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="./brewnest-sheets.js"></script>
+</body>
+</html>

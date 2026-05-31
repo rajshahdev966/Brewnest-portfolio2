@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrewNest Café & Workspace — Specialty Coffee & Rooftop Lounge in Bengaluru</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="BrewNest Café: Premium specialty coffee café and creative workspace in Bengaluru. Experience artisan roasts, rooftop vibes, fast WiFi, and live acoustic music. Book your table today!">
+  <meta name="keywords" content="specialty coffee café in Bengaluru, best café for work in Bengaluru, workspace café Bengaluru, rooftop café Bengaluru, pet friendly café Bengaluru, artisan coffee Bengaluru">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BrewNest Café & Workspace — Specialty Coffee in Bengaluru">
+  <meta property="og:description" content="Premium specialty coffee café and creative workspace in Bengaluru. Experience artisan roasts, rooftop vibes, fast WiFi, and acoustic music.">
+  <meta property="og:image" content="assets/hero_bg.png">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <!-- Google Sheets Web App Integration -->
+  <script src="./brewnest-sheets.js"></script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-container" id="main-navbar">
+    <div class="container navbar">
+      <a href="index.html" class="logo" id="nav-logo">
+        BrewNest<span class="logo-dot"></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li class="nav-item active"><a href="index.html" id="link-home">Home</a></li>
+          <li class="nav-item"><a href="index.html#menu" id="link-menu">Menu</a></li>
+          <li class="nav-item"><a href="index.html#events" id="link-events">Events</a></li>
+          <li class="nav-item"><a href="coffee.html" id="link-coffee">Coffee Products</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="workspace.html" class="btn btn-secondary btn-desktop" id="nav-cta-btn">Reserve Table</a>
+        <button class="hamburger" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div class="mobile-nav-overlay" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-nav-drawer">
+    <ul class="mobile-links">
+      <li class="mobile-item active"><a href="index.html">Home</a></li>
+      <li class="mobile-item"><a href="index.html#menu">Menu</a></li>
+      <li class="mobile-item"><a href="index.html#events">Events</a></li>
+      <li class="mobile-item"><a href="coffee.html">Coffee Products</a></li>
+    </ul>
+    <a href="workspace.html" class="btn btn-primary" style="margin-top: auto; text-align: center;">Reserve Table</a>
+  </aside>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <!-- Video Backgrounds -->
+      <div class="hero-video-container">
+        <video autoplay muted loop playsinline class="hero-video hero-video-desktop">
+          <source src="./hero-video-desktop.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline class="hero-video hero-video-mobile">
+          <source src="./hero-video-mobile.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-ambient-glow"></div>
+      <div class="container hero-grid">
+        <div class="hero-content fade-reveal active">
+          <span class="label-md" style="margin-bottom: 16px;">Premium Café & Workspace</span>
+          <h1 class="display-xl">Specialty Coffee<br>Café &<br><span class="italic-serif">Workspace in</span><br><span class="text-accent">Bengaluru</span></h1>
+          <p class="body-lg">Handcrafted coffee, artisan desserts, and a serene rooftop escape designed for deep work and long conversations.</p>
+          <div class="hero-ctas">
+            <a href="workspace.html" class="btn btn-primary" id="hero-primary-cta">Reserve Your Table</a>
+            <a href="#menu" class="btn btn-secondary" id="hero-secondary-cta">Explore Menu</a>
+          </div>
+          <div class="hero-delivery">
+            <span class="hero-delivery-label">Available On:</span>
+            <a href="https://www.swiggy.com" target="_blank" rel="noopener noreferrer" class="delivery-badge" id="badge-swiggy">
+              <span>Swiggy</span>
+            </a>
+            <a href="https://www.zomato.com" target="_blank" rel="noopener noreferrer" class="delivery-badge" id="badge-zomato">
+              <span>Zomato</span>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Hero Right: Floating Info Cards -->
+        <div class="hero-cards-slider-wrap">
+          <div class="hero-cards-stack">
+            <!-- Card 1 -->
+            <div class="feature-card hero-card" id="hero-card-1">
+              <div class="hero-card-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18q9 3 18 0M5 7v4a5 5 0 0 0 10 0V7M5 7a5 1.5 0 1 0 10 0a5 1.5 0 1 0-10 0M5 10.5a5 1.2 0 0 0 10 0M15 8.5h1.5a2.5 2.5 0 0 1 0 5H15M8 4.5q.3-.8 0-1.5M10 4q.3-.8 0-1.5M12 4.5q.3-.8 0-1.5"/></svg>
+              </div>
+              <div class="hero-card-info">
+                <h3>Freshly Brewed Coffee</h3>
+                <p>Small-batch beans from Chikmagalur.</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="feature-card hero-card" id="hero-card-2">
+              <div class="hero-card-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+              </div>
+              <div class="hero-card-info">
+                <h3>Workspace WiFi</h3>
+                <p>Gigabit speeds for uninterrupted flow.</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="feature-card hero-card" id="hero-card-3">
+              <div class="hero-card-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              </div>
+              <div class="hero-card-info">
+                <h3>Acoustic Music</h3>
+                <p>Sunset sessions every weekend.</p>
+              </div>
+            </div>
+            <!-- Duplicate Set (Hidden on Desktop) -->
+            <!-- Card 1 Duplicate -->
+            <div class="feature-card hero-card duplicate" id="hero-card-1-dup">
+              <div class="hero-card-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18q9 3 18 0M5 7v4a5 5 0 0 0 10 0V7M5 7a5 1.5 0 1 0 10 0a5 1.5 0 1 0-10 0M5 10.5a5 1.2 0 0 0 10 0M15 8.5h1.5a2.5 2.5 0 0 1 0 5H15M8 4.5q.3-.8 0-1.5M10 4q.3-.8 0-1.5M12 4.5q.3-.8 0-1.5"/></svg>
+              </div>
+              <div class="hero-card-info">
+                <h3>Freshly Brewed Coffee</h3>
+                <p>Small-batch beans from Chikmagalur.</p>
+              </div>
+            </div>
+            <!-- Card 2 Duplicate -->
+            <div class="feature-card hero-card duplicate" id="hero-card-2-dup">
+              <div class="hero-card-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+              </div>
+              <div class="hero-card-info">
+                <h3>Workspace WiFi</h3>
+                <p>Gigabit speeds for uninterrupted flow.</p>
+              </div>
+            </div>
+            <!-- Card 3 Duplicate -->
+            <div class="feature-card hero-card duplicate" id="hero-card-3-dup">
+              <div class="hero-card-icon-wrap">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+              </div>
+              <div class="hero-card-info">
+                <h3>Acoustic Music</h3>
+                <p>Sunset sessions every weekend.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Highlights Strip -->
+    <section class="brand-strip">
+      <div class="container">
+        <div class="brand-strip-track">
+          <!-- Primary Set -->
+          <div class="brand-strip-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1" /><path d="M3 8h14v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" /><line x1="6" y1="2" x2="6" y2="4" /><line x1="10" y1="2" x2="10" y2="4" /><line x1="14" y1="2" x2="14" y2="4" /></svg>
+            <span>In-House Roasted Coffee</span>
+          </div>
+          <div class="brand-strip-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5" /><path d="M9 20h6M12 16v4" /></svg>
+            <span>Workspace Friendly</span>
+          </div>
+          <div class="brand-strip-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.8 0 7 3.1 7 7H5c0-3.9 3.2-7 7-7z" /><line x1="12" y1="10" x2="12" y2="21" /><line x1="6" y1="17" x2="18" y2="17" /><line x1="8" y1="17" x2="8" y2="21" /><line x1="16" y1="17" x2="16" y2="21" /></svg>
+            <span>Rooftop Seating</span>
+          </div>
+          <div class="brand-strip-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13c-2 0-3.5 1.5-3.5 3 0 1 1.5 2 3.5 2s3.5-1 3.5-2c0-1.5-1.5-3-3.5-3z" fill="currentColor" /><circle cx="7" cy="10" r="1.8" fill="currentColor" /><circle cx="10.5" cy="7" r="1.8" fill="currentColor" /><circle cx="13.5" cy="7" r="1.8" fill="currentColor" /><circle cx="17" cy="10" r="1.8" fill="currentColor" /></svg>
+            <span>Pet Friendly</span>
+          </div>
+          <!-- Duplicate Set (Hidden on Desktop) -->
+          <div class="brand-strip-item duplicate">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a3 3 0 0 1 0 6h-1" /><path d="M3 8h14v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" /><line x1="6" y1="2" x2="6" y2="4" /><line x1="10" y1="2" x2="10" y2="4" /><line x1="14" y1="2" x2="14" y2="4" /></svg>
+            <span>In-House Roasted Coffee</span>
+          </div>
+          <div class="brand-strip-item duplicate">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.5" /><path d="M9 20h6M12 16v4" /></svg>
+            <span>Workspace Friendly</span>
+          </div>
+          <div class="brand-strip-item duplicate">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.8 0 7 3.1 7 7H5c0-3.9 3.2-7 7-7z" /><line x1="12" y1="10" x2="12" y2="21" /><line x1="6" y1="17" x2="18" y2="17" /><line x1="8" y1="17" x2="8" y2="21" /><line x1="16" y1="17" x2="16" y2="21" /></svg>
+            <span>Rooftop Seating</span>
+          </div>
+          <div class="brand-strip-item duplicate">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 13c-2 0-3.5 1.5-3.5 3 0 1 1.5 2 3.5 2s3.5-1 3.5-2c0-1.5-1.5-3-3.5-3z" fill="currentColor" /><circle cx="7" cy="10" r="1.8" fill="currentColor" /><circle cx="10.5" cy="7" r="1.8" fill="currentColor" /><circle cx="13.5" cy="7" r="1.8" fill="currentColor" /><circle cx="17" cy="10" r="1.8" fill="currentColor" /></svg>
+            <span>Pet Friendly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Menu Experience Section -->
+    <section class="menu-section section-padding" id="menu">
+      <div class="container">
+        <div class="section-header fade-reveal">
+          <span class="label-lg">Our Cafe Menu</span>
+          <h2 class="display-md">Explore Our Specialty Coffee & Café Menu</h2>
+          <p class="body-md">Handcrafted coffee drinks, all-day breakfasts, local single-origin brews, and fresh vegan bakery options prepared daily.</p>
+        </div>
+
+        <!-- Menu Tabs Nav -->
+        <ul class="tab-list fade-reveal" id="menu-tabs">
+          <li><button class="tab-btn active" data-category="coffee">Coffee</button></li>
+          <li><button class="tab-btn" data-category="cold-brews">Cold Brews</button></li>
+          <li><button class="tab-btn" data-category="breakfast">Breakfast</button></li>
+          <li><button class="tab-btn" data-category="desserts">Desserts</button></li>
+          <li><button class="tab-btn" data-category="vegan">Vegan</button></li>
+        </ul>
+
+        <!-- Menu Items Grid -->
+        <div class="menu-grid fade-reveal" id="menu-items-grid">
+          <!-- Dynamic Items inserted by js/menu.js. Showing Fallback for SEO. -->
+          <div class="menu-card" data-item-category="coffee">
+            <div class="menu-card-img-container">
+              <img src="assets/menu_v60.png" alt="Hand-Poured V60 drip coffee setup">
+              <div class="menu-card-badge">Pour Over</div>
+            </div>
+            <div class="menu-card-content">
+              <div class="menu-card-header">
+                <h3 class="menu-card-title">Hand-Poured V60</h3>
+                <span class="menu-card-price">₹280</span>
+              </div>
+              <p class="menu-card-description">Bright single-origin Ethiopian beans with flavor notes of jasmine and wild peach. Brewed to order.</p>
+              <div class="menu-card-pairing">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span>Pairs perfectly with Tiramisu</span>
+              </div>
+              <div class="menu-card-actions">
+                <a href="workspace.html" class="btn btn-secondary" style="width: 100%; padding: 10px;">Order at Table</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workspace Pitches Section -->
+    <section class="workspace-section section-padding" id="workspace">
+      <div class="container workspace-grid">
+        <div class="workspace-left fade-reveal">
+          <div class="workspace-title-area">
+            <div class="mood-indicator">
+              <span class="mood-dot"></span>
+              <span class="mood-text">Current Café Mood: <span class="mood-text-highlight" id="live-cafe-mood">Quiet Work Hours</span></span>
+            </div>
+            <h2 class="display-md">Designed for Work, Meetings & Long Conversations</h2>
+            <p class="body-md">We believe the best work happens in an environment that breathes. From ergonomic chairs and high-speed fiber internet to natural sunlight, every corner of BrewNest is optimized for your productivity.</p>
+          </div>
+          
+          <div class="workspace-features-list">
+            <div class="w-feature-item">
+              <div class="w-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+              </div>
+              <span class="w-feature-text">Charging Ports at Every Table</span>
+            </div>
+            <div class="w-feature-item">
+              <div class="w-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+              </div>
+              <span class="w-feature-text">Gigabit Fiber Internet</span>
+            </div>
+            <div class="w-feature-item">
+              <div class="w-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="w-feature-text">Private Meeting Rooms</span>
+            </div>
+            <div class="w-feature-item">
+              <div class="w-feature-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+              </div>
+              <span class="w-feature-text">Photocopier & Scanner Desk</span>
+            </div>
+          </div>
+
+          <div class="workspace-quote">
+            <p>“Very good coffee followed by a nice workspace, very cozy and aesthetic vibes. The ambient lighting and fiber WiFi make it the ultimate laptop-friendly spot.”</p>
+            <span class="workspace-quote-author">Vikram N., Tech Lead</span>
+          </div>
+        </div>
+        
+        <div class="workspace-right fade-reveal float-slower">
+          <img src="assets/workspace_cafe.png" alt="Freelancers working on laptops in a cozy green cafe workspace with plants and windows">
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooftop Experience & Community Events Section -->
+    <section class="rooftop-section section-padding" id="events">
+      <div class="container rooftop-grid">
+        <div class="rooftop-left fade-reveal">
+          <img src="assets/rooftop_garden.png" alt="A cozy rooftop garden terrace at twilight with hanging string lights, sofas, and plants overlooking the Bengaluru skyline">
+        </div>
+        
+        <div class="rooftop-right fade-reveal">
+          <div class="rooftop-text-area">
+            <span class="label-lg">The Rooftop Garden</span>
+            <h2 class="display-md">Community Events & Acoustic Nights</h2>
+            <p class="body-md">Escape the Bengaluru traffic. Our lush rooftop sanctuary is perfect for quiet afternoon emails, startup meetups, and live acoustic music sessions on weekend evenings.</p>
+          </div>
+          
+          <div class="rooftop-cards-stack">
+            <!-- Event 1 -->
+            <div class="glass-card event-teaser-card" id="event-card-1">
+              <div class="etc-date-badge">
+                <span class="etc-date-day">31</span>
+                <span class="etc-date-month">May</span>
+              </div>
+              <div class="etc-details">
+                <h4>Acoustic Lounge Fridays</h4>
+                <p>Curated live music sets featuring local unplugged artists.</p>
+                <span>7:30 PM Onwards • Rooftop Seating</span>
+              </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="glass-card event-teaser-card" id="event-card-2">
+              <div class="etc-date-badge">
+                <span class="etc-date-day">05</span>
+                <span class="etc-date-month">Jun</span>
+              </div>
+              <div class="etc-details">
+                <h4>Coffee Brewing Masterclass</h4>
+                <p>Learn V60 and AeroPress extraction science from our head roasters.</p>
+                <span>4:00 PM - 6:00 PM • Roastery Bar</span>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <a href="workspace.html" class="btn-link" id="view-calendar-link">See Full Event Calendar <span>&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="testimonials-section section-padding">
+      <div class="container">
+        <div class="section-header fade-reveal">
+          <span class="label-lg">Community Stories</span>
+          <h2 class="display-md">What Our Guests Are Saying</h2>
+          <p class="body-md">Real stories from the creators, developers, and writers who call BrewNest their secondary workspace.</p>
+        </div>
+      </div>
+      
+      <!-- Auto Scroll Testimonials Slider -->
+      <div class="testimonials-slider-container">
+        <div class="testimonials-track" id="testimonials-carousel-track">
+          <!-- Set 1 (Original) -->
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The only place in Bengaluru where I can actually get deep work done while enjoying an outstanding V60. The atmosphere is quiet, pet-friendly, and very supportive.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">AT</div>
+              <div class="user-info">
+                <span class="user-name">Aditi Trivedi</span>
+                <span class="user-role">UI/UX Designer</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“Absolutely in love with their cold brew. Best café for work in Bengaluru, especially during the week. Clean charging slots, fast wifi, and nice foliage.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">VN</div>
+              <div class="user-info">
+                <span class="user-name">Varun Nayar</span>
+                <span class="user-role">Startup Founder</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The rooftop garden acoustic sessions are pure magic. Combine that with a hot flat white, and you get the best twilight atmosphere in Indiranagar.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">PM</div>
+              <div class="user-info">
+                <span class="user-name">Priya Mehta</span>
+                <span class="user-role">Software Architect</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The redundant dual-ISP fiber internet here is a lifesaver. I hosted a 3-hour deployment call from the Quiet Zone without a single drop. Plus, their espresso is top-tier.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">RD</div>
+              <div class="user-info">
+                <span class="user-name">Rohan Das</span>
+                <span class="user-role">Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“BrewNest is my absolute favorite creative sanctuary. Writing copy on the rooftop garden surrounded by plants feels like a retreat, and the bottomless pour-overs keep me focused.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">SC</div>
+              <div class="user-info">
+                <span class="user-name">Sarah Cherian</span>
+                <span class="user-role">Content Strategist</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“I host all my informal investor syncs in the social lounge. The vibe is perfectly balanced—professional yet laid-back. The flat white made with their Chikmagalur single-origin is outstanding.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">KM</div>
+              <div class="user-info">
+                <span class="user-name">Kabir Malhotra</span>
+                <span class="user-role">Venture Capitalist</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“It is so hard to find truly pet-friendly workspaces in the city. Bringing my golden retriever along while working on the shaded terrace has completely transformed my daily routine.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">AS</div>
+              <div class="user-info">
+                <span class="user-name">Ananya Sen</span>
+                <span class="user-role">Freelance Illustrator</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“Clean acoustics, ergonomic seating, and plenty of power sockets. The staff understands that remote workers need space, and they respect your focus. A masterpiece of a hybrid café.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">AV</div>
+              <div class="user-info">
+                <span class="user-name">Dr. Amit Verma</span>
+                <span class="user-role">AI Researcher</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The community events here are fantastic. I attended a Saturday brewing workshop and ended up networking with three engineers who are now helping build my MVP.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">MR</div>
+              <div class="user-info">
+                <span class="user-name">Maya Rao</span>
+                <span class="user-role">Product Manager</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“Quiet hours are genuinely quiet. I can edit podcasts here in the morning without any distracting background chatter. The ambient design and the low-decibel policy are wonderful.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">ND</div>
+              <div class="user-info">
+                <span class="user-name">Nigel D'Souza</span>
+                <span class="user-role">Sound Designer</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Set 2 (Duplicate for Infinite Scroll) -->
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The only place in Bengaluru where I can actually get deep work done while enjoying an outstanding V60. The atmosphere is quiet, pet-friendly, and very supportive.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">AT</div>
+              <div class="user-info">
+                <span class="user-name">Aditi Trivedi</span>
+                <span class="user-role">UI/UX Designer</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“Absolutely in love with their cold brew. Best café for work in Bengaluru, especially during the week. Clean charging slots, fast wifi, and nice foliage.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">VN</div>
+              <div class="user-info">
+                <span class="user-name">Varun Nayar</span>
+                <span class="user-role">Startup Founder</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The rooftop garden acoustic sessions are pure magic. Combine that with a hot flat white, and you get the best twilight atmosphere in Indiranagar.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">PM</div>
+              <div class="user-info">
+                <span class="user-name">Priya Mehta</span>
+                <span class="user-role">Software Architect</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The redundant dual-ISP fiber internet here is a lifesaver. I hosted a 3-hour deployment call from the Quiet Zone without a single drop. Plus, their espresso is top-tier.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">RD</div>
+              <div class="user-info">
+                <span class="user-name">Rohan Das</span>
+                <span class="user-role">Full Stack Developer</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“BrewNest is my absolute favorite creative sanctuary. Writing copy on the rooftop garden surrounded by plants feels like a retreat, and the bottomless pour-overs keep me focused.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">SC</div>
+              <div class="user-info">
+                <span class="user-name">Sarah Cherian</span>
+                <span class="user-role">Content Strategist</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“I host all my informal investor syncs in the social lounge. The vibe is perfectly balanced—professional yet laid-back. The flat white made with their Chikmagalur single-origin is outstanding.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">KM</div>
+              <div class="user-info">
+                <span class="user-name">Kabir Malhotra</span>
+                <span class="user-role">Venture Capitalist</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“It is so hard to find truly pet-friendly workspaces in the city. Bringing my golden retriever along while working on the shaded terrace has completely transformed my daily routine.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">AS</div>
+              <div class="user-info">
+                <span class="user-name">Ananya Sen</span>
+                <span class="user-role">Freelance Illustrator</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“Clean acoustics, ergonomic seating, and plenty of power sockets. The staff understands that remote workers need space, and they respect your focus. A masterpiece of a hybrid café.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">AV</div>
+              <div class="user-info">
+                <span class="user-name">Dr. Amit Verma</span>
+                <span class="user-role">AI Researcher</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“The community events here are fantastic. I attended a Saturday brewing workshop and ended up networking with three engineers who are now helping build my MVP.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">MR</div>
+              <div class="user-info">
+                <span class="user-name">Maya Rao</span>
+                <span class="user-role">Product Manager</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="stars">
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <p class="testimonial-text">“Quiet hours are genuinely quiet. I can edit podcasts here in the morning without any distracting background chatter. The ambient design and the low-decibel policy are wonderful.”</p>
+            <div class="user-profile">
+              <div class="user-avatar">ND</div>
+              <div class="user-info">
+                <span class="user-name">Nigel D'Souza</span>
+                <span class="user-role">Sound Designer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="container footer-grid">
+      <!-- Logo and Description -->
+      <div class="footer-logo-col">
+        <a href="index.html" class="logo">
+          BrewNest<span class="logo-dot"></span>
+        </a>
+        <p class="footer-tagline">Specialty Coffee Café & Workspace in Bengaluru. Designed for creators, developers, and writers.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+          <a href="#" class="social-icon" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      
+      <!-- Nav Links -->
+      <div>
+        <h3 class="footer-title">Experience</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="index.html#menu">Menu</a></li>
+          <li class="footer-link"><a href="workspace.html">Booking</a></li>
+          <li class="footer-link"><a href="coffee.html">Coffee Products</a></li>
+          <li class="footer-link"><a href="index.html#events">Community Events</a></li>
+        </ul>
+      </div>
+      
+      <!-- Company Links -->
+      <div>
+        <h3 class="footer-title">Company</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="#">About Us</a></li>
+          <li class="footer-link"><a href="#">Careers</a></li>
+          <li class="footer-link"><a href="#">Press Kit</a></li>
+          <li class="footer-link"><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info & Embed Map -->
+      <div class="footer-contact-col">
+        <h3 class="footer-title">Visit Us</h3>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>102, 80 Feet Road, Indiranagar, Bengaluru, KA 560038</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Open Daily: 8:00 AM - 11:00 PM</span>
+        </div>
+        
+        <!-- Google Maps container placeholder with custom styles -->
+        <div class="footer-map-container">
+          <iframe title="BrewNest Cafe Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8813861021995!2d77.64678359999999!3d12.979437599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16ae6b7be9cf%3A0x7ba63741afc606f5!2s102%2C%2080%20Feet%20Rd%2C%20Michael%20Palaya%2C%20New%20Tippasandra%2C%20Bengaluru%2C%20Karnataka%20560075!5e0!3m2!1sen!2sin!4v1780201709956!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p class="footer-copy">&copy; 2026 BrewNest Café. Artisan Roast & Refined Workspace. All Rights Reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#" class="footer-legal-link">Terms of Service</a>
+        <a href="#" class="footer-legal-link">Sitemap</a>
+        <a href="#" class="footer-legal-link">Local Schema</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/navbar.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="./brewnest-sheets.js"></script>
+</body>
+</html>
