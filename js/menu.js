@@ -2,6 +2,7 @@
  * js/menu.js
  * Controls the interactive menu tab filters and dynamic card injection.
  */
+'use strict';
 
 const MENU_DATA = [
   // COFFEE CATEGORY
@@ -118,18 +119,24 @@ const MENU_DATA = [
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('#menu-tabs .tab-btn');
   const grid = document.getElementById('menu-items-grid');
+  const ANIMATION_DELAY = 200;
   
   if (!grid) return; // Exit if not on the landing page
 
-  // Render a specific category of menu items
+  /**
+   * Renders the specified category of menu items to the grid with transition effects.
+   * @param {string} category - The category to filter by (e.g., 'coffee').
+   */
   const renderMenu = (category) => {
+    if (!grid) return;
+    
     // Filter data
     const filteredItems = MENU_DATA.filter(item => item.category === category);
     
     // Set opacity to 0 first for transition
     grid.style.opacity = '0';
     grid.style.transform = 'translateY(15px)';
-    grid.style.transition = 'opacity 200ms ease-out, transform 200ms ease-out';
+    grid.style.transition = `opacity ${ANIMATION_DELAY}ms ease-out, transform ${ANIMATION_DELAY}ms ease-out`;
     
     setTimeout(() => {
       // Clear grid
@@ -165,23 +172,27 @@ document.addEventListener('DOMContentLoaded', () => {
       // Reveal items
       grid.style.opacity = '1';
       grid.style.transform = 'translateY(0)';
-    }, 200);
+    }, ANIMATION_DELAY);
   };
 
   // Add event listener to each tab button
-  tabs.forEach(tab => {
-    tab.addEventListener('click', (e) => {
-      // Deactivate other tabs
-      tabs.forEach(t => t.classList.remove('active'));
-      
-      // Activate clicked tab
-      tab.classList.add('active');
-      
-      // Get category and render
-      const category = tab.getAttribute('data-category');
-      renderMenu(category);
+  if (tabs.length > 0) {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Deactivate other tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        
+        // Activate clicked tab
+        tab.classList.add('active');
+        
+        // Get category and render
+        const category = tab.getAttribute('data-category');
+        if (category) {
+          renderMenu(category);
+        }
+      });
     });
-  });
+  }
 
   // Initial render of the default "coffee" category
   renderMenu('coffee');

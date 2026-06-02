@@ -1,3 +1,7 @@
+/**
+ * css/variables.css
+ * Core design tokens including colors, typography, spacing, and glassmorphism specs.
+ */
 /* design.md variables mapped to CSS custom properties */
 :root {
   /* Brand Colors */

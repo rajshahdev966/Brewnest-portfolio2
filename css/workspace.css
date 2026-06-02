@@ -1,3 +1,7 @@
+/**
+ * css/workspace.css
+ * Booking form, live updates board, and success modal styling.
+ */
 /* Reservations & Booking Specific Styles */
 
 .booking-section {
@@ -324,28 +328,31 @@
 }
 
 /* Responsive booking forms */
+
+/* ════ MEDIA QUERIES: (max-width: 1024px) ════ */
 @media (max-width: 1024px) {
   .booking-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  grid-template-columns: 1fr;
+  gap: 40px;
   }
   .booking-form-container {
-    padding: 30px;
+  padding: 30px;
   }
   .booking-side-panel {
-    position: static;
+  position: static;
   }
 }
 
+/* ════ MEDIA QUERIES: (max-width: 640px) ════ */
 @media (max-width: 640px) {
   .booking-form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
+  grid-template-columns: 1fr;
+  gap: 0;
   }
   .zone-selector-grid {
-    grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   }
   .booking-form-container {
-    padding: 20px;
+  padding: 20px;
   }
 }

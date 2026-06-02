@@ -5,84 +5,96 @@
  * - Magnetic hover effects on action buttons and social links.
  * - Parallax translation effects on hero background layers.
  */
+'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // DOM Elements Caching
+  const heroBg = document.querySelector('.hero-video-container');
+  const coffeeHeroBg = document.querySelector('.coffee-hero-bg');
+  const coffeeHeroVideo = document.querySelector('.coffee-hero-video-container');
+  const revealElements = document.querySelectorAll('.fade-reveal');
+  const magneticElements = document.querySelectorAll('.btn, .social-icon, .carousel-nav-btn');
+  const track = document.getElementById('testimonials-carousel-track');
+
+  // Constants
+  const PARALLAX_SPEED = 0.35;
+  const MAGNETIC_STRENGTH = 0.2;
+  const REVEAL_THRESHOLD = 0.02;
+  const REVEAL_ROOT_MARGIN = "0px 0px -50px 0px";
+  const MOOD_UPDATE_INTERVAL_MS = 60000;
+
   // 1. Scroll Parallax on Hero backgrounds
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     
     // Landing page hero background video parallax
-    const heroBg = document.querySelector('.hero-video-container');
     if (heroBg) {
-      heroBg.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`;
+      heroBg.style.transform = `translate3d(0, ${scrolled * PARALLAX_SPEED}px, 0)`;
     }
 
     // Coffee page hero background
-    const coffeeHeroBg = document.querySelector('.coffee-hero-bg');
     if (coffeeHeroBg) {
-      coffeeHeroBg.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`;
+      coffeeHeroBg.style.transform = `translate3d(0, ${scrolled * PARALLAX_SPEED}px, 0)`;
     }
 
-    const coffeeHeroVideo = document.querySelector('.coffee-hero-video-container');
     if (coffeeHeroVideo) {
-      coffeeHeroVideo.style.transform = `translate3d(0, ${scrolled * 0.35}px, 0)`;
+      coffeeHeroVideo.style.transform = `translate3d(0, ${scrolled * PARALLAX_SPEED}px, 0)`;
     }
-  });
+  }, { passive: true });
 
   // 2. Intersection Observer for Scroll Reveals
-  const revealElements = document.querySelectorAll('.fade-reveal');
-  
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          // Once revealed, we don't need to observe it anymore
-          observer.unobserve(entry.target);
-        }
+  if (revealElements.length > 0) {
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Once revealed, we don't need to observe it anymore
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        threshold: REVEAL_THRESHOLD, 
+        rootMargin: REVEAL_ROOT_MARGIN
       });
-    }, {
-      root: null,
-      threshold: 0.02, // Lower threshold to ensure tall elements (like vertical grids/columns on mobile) trigger successfully
-      rootMargin: "0px 0px -50px 0px" // Trigger slightly before it enters screen fully
-    });
 
-    revealElements.forEach(el => revealObserver.observe(el));
-  } else {
-    // Fallback for older browsers
-    revealElements.forEach(el => el.classList.add('active'));
+      revealElements.forEach(el => revealObserver.observe(el));
+    } else {
+      // Fallback for older browsers
+      revealElements.forEach(el => el.classList.add('active'));
+    }
   }
 
   // 3. Magnetic Hover Animation on Buttons and Social Icons
-  const magneticElements = document.querySelectorAll('.btn, .social-icon, .carousel-nav-btn');
-  
-  magneticElements.forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      // Calculate mouse offset from center of the button
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      
-      // Pull button slightly towards the mouse (magnetic effect)
-      el.style.transform = `translate3d(${x * 0.2}px, ${y * 0.2}px, 0) scale(1.03)`;
-      
-      // Add dynamic hover shadows
-      if (el.classList.contains('btn-primary')) {
-        el.style.boxShadow = `0px 14px 32px rgba(245, 235, 221, 0.25)`;
-      } else if (el.classList.contains('btn-tertiary')) {
-        el.style.boxShadow = `0px 12px 28px rgba(200, 155, 99, 0.3)`;
-      }
-    });
+  if (magneticElements.length > 0) {
+    magneticElements.forEach(el => {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        // Calculate mouse offset from center of the button
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        // Pull button slightly towards the mouse (magnetic effect)
+        el.style.transform = `translate3d(${x * MAGNETIC_STRENGTH}px, ${y * MAGNETIC_STRENGTH}px, 0) scale(1.03)`;
+        
+        // Add dynamic hover shadows
+        if (el.classList.contains('btn-primary')) {
+          el.style.boxShadow = `0px 14px 32px rgba(245, 235, 221, 0.25)`;
+        } else if (el.classList.contains('btn-tertiary')) {
+          el.style.boxShadow = `0px 12px 28px rgba(200, 155, 99, 0.3)`;
+        }
+      });
 
-    el.addEventListener('mouseleave', () => {
-      // Restore initial state on mouse leave
-      el.style.transform = '';
-      el.style.boxShadow = '';
+      el.addEventListener('mouseleave', () => {
+        // Restore initial state on mouse leave
+        el.style.transform = '';
+        el.style.boxShadow = '';
+      });
     });
-  });
+  }
 
   // 4. Testimonials carousel dragging gesture simulation or swipe logic for touch interfaces
-  const track = document.getElementById('testimonials-carousel-track');
   if (track) {
     let isDown = false;
     let startX;
@@ -108,7 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Automated Live Café Mood Status
   let prevMoodLabel = "";
+  let prevWorkspaceMoodLabel = "";
 
+  /**
+   * Helper function to extract and convert border color based on mood.
+   * @param {string} color - The base color string (rgba or hex).
+   * @returns {string} The transformed rgba color for borders.
+   */
   function getBorderColor(color) {
     if (color.startsWith('rgba')) {
       return color.replace(/[^,]+(?=\))/, '0.25');
@@ -119,6 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
     return `rgba(${r}, ${g}, ${b}, 0.25)`;
   }
 
+  /**
+   * Calculates the current cafe mood based on time of day and day of week.
+   * @returns {Object} An object containing the label, color, and pulseSpeed for the mood.
+   */
   function getCafeMood() {
     const now = new Date();
     const hours = now.getHours();
@@ -184,6 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return mood;
   }
 
+  /**
+   * Updates the UI with the latest cafe mood if it has changed.
+   */
   function updateCafeMood() {
     if (window.BREWNEST_SHEETS_LOADED) return;
     const moodTextHighlight = document.getElementById('live-cafe-mood');
@@ -222,8 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
     prevMoodLabel = mood.label;
   }
 
-  let prevWorkspaceMoodLabel = "";
-
+  /**
+   * Updates the live board on the workspace page if it has changed.
+   */
   function updateWorkspaceLiveBoard() {
     if (window.BREWNEST_SHEETS_LOADED) return;
     const statusText = document.getElementById('lub-status-text');
@@ -327,9 +353,11 @@ document.addEventListener('DOMContentLoaded', () => {
     prevWorkspaceMoodLabel = mood.label;
   }
 
+  // Initial load
   updateCafeMood();
   updateWorkspaceLiveBoard();
 
+  // Polling interval
   const moodInterval = setInterval(() => {
     const hasPill = document.querySelector('.mood-indicator');
     const hasBoard = document.getElementById('live-board');
@@ -339,5 +367,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateCafeMood();
     updateWorkspaceLiveBoard();
-  }, 60000);
+  }, MOOD_UPDATE_INTERVAL_MS);
 });

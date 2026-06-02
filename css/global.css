@@ -1,3 +1,7 @@
+/**
+ * css/global.css
+ * Reset, base typography, and global utility classes.
+ */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 /* Reset & Base Rules */
@@ -60,19 +64,9 @@ button, input, select, textarea {
   padding-right: var(--margin-desktop);
 }
 
-@media (max-width: 1024px) {
-  .container {
-    padding-left: var(--margin-tablet);
-    padding-right: var(--margin-tablet);
-  }
-}
 
-@media (max-width: 768px) {
-  .container {
-    padding-left: var(--margin-mobile);
-    padding-right: var(--margin-mobile);
-  }
-}
+
+
 
 /* Header Text Styles */
 .display-xl {
@@ -153,22 +147,9 @@ button, input, select, textarea {
   color: var(--color-accent);
 }
 
-@media (max-width: 1024px) {
-  .display-xl { font-size: 64px; }
-  .display-lg { font-size: 52px; }
-  .display-md { font-size: 44px; }
-  .headline-lg { font-size: 36px; }
-  .headline-md { font-size: 28px; }
-}
 
-@media (max-width: 768px) {
-  .display-xl { font-size: 44px; }
-  .display-lg { font-size: 38px; }
-  .display-md { font-size: 32px; }
-  .headline-lg { font-size: 28px; }
-  .headline-md { font-size: 22px; }
-  .body-lg { font-size: 16px; }
-}
+
+
 
 /* Cinematic Scrollbar */
 ::-webkit-scrollbar {
@@ -208,12 +189,7 @@ button, input, select, textarea {
   padding-bottom: var(--section-padding);
 }
 
-@media (max-width: 768px) {
-  .section-padding {
-    padding-top: calc(var(--section-padding) / 2);
-    padding-bottom: calc(var(--section-padding) / 2);
-  }
-}
+
 
 /* Interactive & Scroll Animations classes */
 .fade-reveal {
@@ -246,4 +222,38 @@ button, input, select, textarea {
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border-radius: var(--radius-card);
+}
+
+/* ════ MEDIA QUERIES: (max-width: 1024px) ════ */
+@media (max-width: 1024px) {
+  .container {
+  padding-left: var(--margin-tablet);
+  padding-right: var(--margin-tablet);
+  }
+
+  .display-xl { font-size: 64px; }
+  .display-lg { font-size: 52px; }
+  .display-md { font-size: 44px; }
+  .headline-lg { font-size: 36px; }
+  .headline-md { font-size: 28px; }
+}
+
+/* ════ MEDIA QUERIES: (max-width: 768px) ════ */
+@media (max-width: 768px) {
+  .container {
+  padding-left: var(--margin-mobile);
+  padding-right: var(--margin-mobile);
+  }
+
+  .display-xl { font-size: 44px; }
+  .display-lg { font-size: 38px; }
+  .display-md { font-size: 32px; }
+  .headline-lg { font-size: 28px; }
+  .headline-md { font-size: 22px; }
+  .body-lg { font-size: 16px; }
+
+  .section-padding {
+  padding-top: calc(var(--section-padding) / 2);
+  padding-bottom: calc(var(--section-padding) / 2);
+  }
 }

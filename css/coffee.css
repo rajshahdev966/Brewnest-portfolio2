@@ -1,3 +1,7 @@
+/**
+ * css/coffee.css
+ * Roastery hero, products carousel, and coffee page specific styles.
+ */
 /* Coffee Product Experience Specific Styles */
 
 .coffee-hero {
@@ -165,17 +169,9 @@
   transition: transform var(--transition-normal);
 }
 
-@media (max-width: 1024px) {
-  .products-carousel-track {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
-@media (max-width: 640px) {
-  .products-carousel-track {
-    grid-template-columns: 1fr;
-  }
-}
+
+
 
 /* Why BrewNest Roastery Split section */
 .why-roastery-section {
@@ -263,15 +259,7 @@
   line-height: 1.5;
 }
 
-@media (max-width: 1024px) {
-  .why-roastery-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .why-roastery-left {
-    height: 380px;
-  }
-}
+
 
 /* Membership Waitlist Callout */
 .membership-section {
@@ -332,15 +320,35 @@
   color: var(--text-muted);
 }
 
+/* ════ MEDIA QUERIES: (max-width: 1024px) ════ */
+@media (max-width: 1024px) {
+  .products-carousel-track {
+  grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-roastery-grid {
+  grid-template-columns: 1fr;
+  gap: 48px;
+  }
+  .why-roastery-left {
+  height: 380px;
+  }
+}
+
+/* ════ MEDIA QUERIES: (max-width: 640px) ════ */
 @media (max-width: 640px) {
+  .products-carousel-track {
+  grid-template-columns: 1fr;
+  }
+
   .membership-form {
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
   }
   .membership-form .form-input {
-    max-width: 100%;
+  max-width: 100%;
   }
   .membership-form .btn {
-    width: 100%;
+  width: 100%;
   }
 }

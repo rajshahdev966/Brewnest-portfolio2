@@ -1,3 +1,7 @@
+/**
+ * css/navbar.css
+ * Responsive navigation bar and mobile drawer styling.
+ */
 /* Navbar Styles */
 .navbar-container {
   position: fixed;
@@ -207,14 +211,16 @@
 }
 
 /* Responsive Rules for Nav */
+
+/* ════ MEDIA QUERIES: (max-width: 1024px) ════ */
 @media (max-width: 1024px) {
   .navbar-container {
-    height: 72px;
+  height: 72px;
   }
   .nav-links, .nav-actions .btn-desktop {
-    display: none;
+  display: none;
   }
   .hamburger {
-    display: flex;
+  display: flex;
   }
 }

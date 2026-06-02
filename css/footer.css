@@ -1,3 +1,7 @@
+/**
+ * css/footer.css
+ * Footer layout, newsletter form, and embedded map.
+ */
 /* Footer Styles */
 .footer-section {
   background-color: var(--color-surface-lowest);
@@ -191,20 +195,23 @@
 }
 
 /* Responsive Footer styling */
+
+/* ════ MEDIA QUERIES: (max-width: 1024px) ════ */
 @media (max-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   }
 }
 
+/* ════ MEDIA QUERIES: (max-width: 640px) ════ */
 @media (max-width: 640px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  grid-template-columns: 1fr;
+  gap: 32px;
   }
   .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
   }
 }

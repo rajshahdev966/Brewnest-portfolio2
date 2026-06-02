@@ -3,6 +3,8 @@
  * Handles real-time café status, capacity metrics, upcoming events, and booking submissions.
  * Optimized with JSDoc documentation, self-documenting naming conventions, and stale-while-revalidate caching.
  */
+'use strict';
+
 
 if (!window.BREWNEST_SHEETS_LOADED) {
   window.BREWNEST_SHEETS_LOADED = true;
@@ -73,6 +75,25 @@ if (!window.BREWNEST_SHEETS_LOADED) {
   }
 
   /**
+   * Wrapper for bnFetch that retries failed requests automatically.
+   * @param {string} apiAction - The query action parameter.
+   * @param {number} retries - Number of times to retry.
+   * @returns {Promise<Object>} The data object returned from the API.
+   */
+  async function bnFetchWithRetry(apiAction, retries = 2) {
+    for (let i = 0; i < retries; i++) {
+      try {
+        return await bnFetch(apiAction);
+      } catch (err) {
+        if (i === retries - 1) throw err;
+        console.warn(`[Retry ${i + 1}] Retrying ${apiAction} after failure...`);
+        // Exponential backoff
+        await new Promise(res => setTimeout(res, Math.pow(2, i) * 1000));
+      }
+    }
+  }
+
+  /**
    * Retrieves and parses a JSON payload from localStorage if it has not expired.
    * @param {string} cacheKey - The cache key descriptor matching BREWNEST_CONFIG.cache.
    * @param {number} maxAgeMs - The maximum allowable age of the cache in milliseconds.
@@ -127,7 +148,7 @@ if (!window.BREWNEST_SHEETS_LOADED) {
     }
 
     try {
-      const apiData = await bnFetch('getCafeStatus');
+      const apiData = await bnFetchWithRetry('getCafeStatus');
       bnSetCache('cafeStatus', apiData);
       applyCafeStatus(apiData);
 
@@ -261,7 +282,7 @@ if (!window.BREWNEST_SHEETS_LOADED) {
     }
 
     try {
-      const apiData = await bnFetch('getEvents');
+      const apiData = await bnFetchWithRetry('getEvents');
       bnSetCache('events', apiData);
       renderEvents(apiData);
 
@@ -438,7 +459,7 @@ if (!window.BREWNEST_SHEETS_LOADED) {
     }
 
     try {
-      const apiData = await bnFetch('getCapacity');
+      const apiData = await bnFetchWithRetry('getCapacity');
       bnSetCache('capacity', apiData);
       applyCapacity(apiData);
 
